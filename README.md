@@ -53,6 +53,25 @@ You can optionally specify the command line shell you are using, if unspecified 
 
 The MCP server needs to know the shell only when executing commands, to properly read its exit status.
 
+## Remote execution
+
+In case the `tmux` session is running on another machine, you may tunnel your `tmux`
+commands over ssh, assuming you set up passwordless login, e.g., via SSH keys
+to the remote machine.
+
+To tunnel over SSH, add the `--ssh user@host` argument to the Claude configuration:
+```
+"mcpServers": {
+  "tmux": {
+    "command": "npx",
+    "args": ["-y", "tmux-mcp", "--ssh=user@host"]
+  }
+}
+```
+
+assuming that `ssh user@host` logs into the remote system without any interactive prompts.
+Please note that this has only been tested with `bash` on both sides.
+
 ## Available Resources
 
 - `tmux://sessions` - List all tmux sessions
