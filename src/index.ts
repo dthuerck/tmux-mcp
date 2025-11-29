@@ -612,7 +612,7 @@ async function main() {
     const { values } = parseArgs({
       options: {
         'shell-type': { type: 'string', default: 'bash', short: 's' },
-        'ssh': { type: 'string', default: undefined, short: 'h'}
+        'ssh': { type: 'string', default: undefined, short: 'r'}
       }
     });
 
