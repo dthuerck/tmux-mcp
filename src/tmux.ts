@@ -53,8 +53,8 @@ export function setShellConfig(config: { type: string }): void {
   }
 }
 
-export function setSSHPrefix(conn_str: string): void {
-  sshPrefix = `ssh ${conn_str} `
+export function setSSHPrefix(connectionString: string): void {
+  sshPrefix = `ssh ${connectionString} `
 }
 
 /**
