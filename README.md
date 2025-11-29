@@ -56,7 +56,7 @@ The MCP server needs to know the shell only when executing commands, to properly
 ## Remote execution
 
 In case the `tmux` session is running on another machine, you may tunnel your `tmux`
-commands over ssh, assuming you set up passwordless login, e.g., via SSH keys
+commands over ssh, assuming you set up non-interactive login, e.g., via SSH keys
 to the remote machine.
 
 To tunnel over SSH, add the `--ssh user@host` argument to the Claude configuration:
@@ -71,6 +71,9 @@ To tunnel over SSH, add the `--ssh user@host` argument to the Claude configurati
 
 assuming that `ssh user@host` logs into the remote system without any interactive prompts.
 Please note that this has only been tested with `bash` on both sides.
+
+You may need to pass further parts of the SSH commands here, e.g. `-i <path to your SSH key>`
+although, for brevity, we recommend using the `~/.ssh/config`.
 
 ## Available Resources
 
